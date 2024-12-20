@@ -86,11 +86,6 @@ body {
 
     text-align: center;
 
-    &:has(~ .dock) {
-        background-color: blue;
-        /* display: none; */
-    }
-
     a {
         width: 100%;
     }
@@ -100,7 +95,7 @@ body {
 }
 
 #launchpad {
-    /* opacity: 0; */
+    opacity: 0;
 
     position: absolute;
     bottom: 1.1px;
@@ -111,5 +106,9 @@ body {
 
     border: none;
     border-radius: 100%;
-    background-color: transparent;
+    background-color: white;
+
+    &:not(:checked) + .items {
+        display: none;
+    }
 }
