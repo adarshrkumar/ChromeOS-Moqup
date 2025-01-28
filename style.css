@@ -44,6 +44,8 @@ body {
 
     overflow: auto;
 
+    position: relative;
+
     .view {
         margin: 0;
         padding: 0;
@@ -52,6 +54,19 @@ body {
         display: block;
         width: 100%;
         height: 100%;
+    }
+
+    .background-block {
+
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &:has(~ #launchpad:not(:checked)) .background-block {
+        display: none;
     }
 }
 
@@ -82,6 +97,8 @@ body {
     background-color: white;
     border-radius: 1rem;
 
+    box-shadow: 0 0 0.75rem 0.25rem lightgray;
+
     display: grid;
 
     text-align: center;
@@ -108,7 +125,9 @@ body {
     border-radius: 100%;
     background-color: white;
 
-    &:not(:checked) + .items {
-        display: none;
+    &:not(:checked) {
+        + .items {
+            display: none;
+        }
     }
 }
